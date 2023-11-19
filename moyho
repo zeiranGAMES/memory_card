@@ -1,0 +1,36 @@
+def staff_min_efficiency (staff):
+    min_efficiency = min(staff.values(), key=lambda x: x['ефективність'])
+    return min_efficiency['ефективність']
+
+def staff_max_efficiency (staff):
+    max_efficiency = max(staff.values(), key=lambda x: x['ефективність'])
+    return max_efficiency['ефективність']
+
+staff = {
+     'Петрик': {
+         'посаду': 'менеджер з продажу',
+         'ефективність': 86
+     },
+     'Ткач': {
+         'посаду': 'менеджер з продажу',
+         'ефективність': 69
+     },
+     'Костін': {
+         'посаду': 'менеджер з продажу',
+         'ефективність': 78
+     },
+     'Костилєв': {
+         'посаду': 'менеджер з продажу',
+         'ефективність': 91
+     },
+     'Борисенко': {
+         'посаду': 'менеджер з продажу',
+         'ефективність': 99
+     }
+}
+
+best_employee = max(staff, key=lambda x: staff[x]['ефективність'])
+worst_employee = min(staff, key=lambda x: staff[x]['ефективність'])
+
+print('Кращий результат:',  staff[best_employee]['ефективність'])
+print('Найгірший результат:',  staff[worst_employee]['ефективність'])
